@@ -8,7 +8,7 @@ CREATE DATABASE SistemaPetShop;
 CREATE TABLE cliente(
     cpf CHAR(15) primary key NOT NULL, 
     nomecompletocliente VARCHAR(200) NOT NULL, 
-    telefone INT(15) NOT NULL
+    telefone VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE animal(
@@ -21,14 +21,14 @@ CREATE TABLE veterinario(
     crmv CHAR(10) primary key NOT NULL, 
     nomecompletoveterinario VARCHAR(200) NOT NULL, 
     datadeadmissao DATE NOT NULL,
-    salario DECIMAL(10,2)
+    salario DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE consulta(
     id_consulta INT (10) primary key NOT NULL, 
     dataconsulta DATE NOT NULL, 
     horarioconsulta TIME NOT NULL,
-    motivo varchar(200)
+    motivo VARCHAR (200) NOT NULL
 );
 
 
@@ -56,6 +56,8 @@ VALUES ('1144444411', 'Ana Claudia Cunha', '11999998888' )
 
 /*Por fim, realize a exclusão dos dados da tabela cliente*/
 DELETE FROM Cliente;
+
+DELETE FROM Cliente WHERE cpf = 1144444411; /*Excuir dados especificos*/
 
 
 /*Realize a exclusão de cada uma das tabelas*/
